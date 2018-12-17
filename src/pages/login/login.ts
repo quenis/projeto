@@ -62,7 +62,7 @@ export class LoginPage {
       && this.usuario.cpf !== ""){
 
       if(this.usuario.cpf.length == 3) 
-        this.usuario.cpf = this.usuario.cpf + '.';
+        this.usuario.cpf = this.usuario.cpf + '.'; 
       
       if(this.usuario.cpf.length == 7) 
         this.usuario.cpf = this.usuario.cpf + '.';

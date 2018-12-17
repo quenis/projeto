@@ -1,0 +1,7 @@
+{
+  "name": "cs-ufg-ionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
