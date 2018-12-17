@@ -1,0 +1,27 @@
+<ion-header enabled="false">
+  <ion-navbar color="primary">
+      <ion-title align="center">Autenticação</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="login()" #registerForm="ngForm">
+      <ion-row>
+          <ion-col>
+              <ion-list inset>
+                  <ion-item>
+                      <ion-input type="tel" placeholder="CPF" name="cpf" [(ngModel)]="usuario.cpf" (ionChange)="formatarCPF()" maxlength="14" required></ion-input>
+                  </ion-item>
+                  <ion-item>
+                      <ion-input type="password" placeholder="Senha" name="senha" [(ngModel)]="usuario.senha" required></ion-input>
+                  </ion-item>
+              </ion-list>
+          </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col class="signin-col">
+              <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid" style="background-color: #2ecc71; width: 100%">Entrar</button>
+          </ion-col>
+      </ion-row>
+  </form>
+</ion-content>
