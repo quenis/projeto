@@ -81,13 +81,7 @@ export class LoginProvider {
         this.setAuthenticatedUser(usuario);
         observer.next();
         observer.complete();
-      }
-
-      
-
-    
+      }          
     });
-
   }
-
 }
