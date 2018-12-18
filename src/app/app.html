@@ -1,10 +1,6 @@
 <ion-menu id="myMenu" [content]="content">
   <ion-header>
-    <ion-toolbar color="primary">
-      <!--<ion-title>Menu</ion-title>-->
-
-     
-
+    <ion-toolbar color="primary">      
       <ion-list>
         <ion-item color="primary">
           <ion-avatar item-start>
@@ -14,13 +10,9 @@
           <p id=cpfUsuarioLogado></p> 
           <div class="item-note" item-end>
             <ion-icon name="md-log-out" style="color: #e74c3c;font-size: 34px" (click)="logout()" menuClose></ion-icon>
-          </div>
-          
-        </ion-item>
-        
+          </div>          
+        </ion-item>        
       </ion-list>
-
-
     </ion-toolbar>
   </ion-header>
 
@@ -31,7 +23,6 @@
       </button>
     </ion-list>
   </ion-content>
-
 </ion-menu>
 
 <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->

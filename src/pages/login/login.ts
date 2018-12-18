@@ -44,7 +44,6 @@ export class LoginPage {
     private menu: MenuController,
     public loadingCtrl: LoadingController) {
 
-
   }
 
   abrirCarregando() {
@@ -67,7 +66,7 @@ export class LoginPage {
   }
 
   /**
-   * Call authenticator.
+   * Chama o serviço rest passando como parâmetro o cpf e a senha.
    */
   public login(): void {
 
@@ -99,8 +98,6 @@ export class LoginPage {
             }
           )
       }, 2000);
-
-
     }
   }
 
