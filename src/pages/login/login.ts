@@ -1,11 +1,13 @@
 import { MyApp } from './../../app/app.component';
 
 import { Component } from '@angular/core';
-import { NavController, 
-  NavParams, 
-  ToastController, 
-  MenuController, 
-  LoadingController } from 'ionic-angular';
+import {
+  NavController,
+  NavParams,
+  ToastController,
+  MenuController,
+  LoadingController
+} from 'ionic-angular';
 
 import { LoginProvider } from '../../providers/login/login';
 import { InscricoesPage } from './../inscricoes/inscricoes';
@@ -57,26 +59,18 @@ export class LoginPage {
   }
 
   public formatarCPF(): void {
-    
-    if(this.usuario.cpf !== undefined
-      && this.usuario.cpf !== ""){
 
-      if(this.usuario.cpf.length == 3) 
-        this.usuario.cpf = this.usuario.cpf + '.'; 
-      
-      if(this.usuario.cpf.length == 7) 
-        this.usuario.cpf = this.usuario.cpf + '.';
-      
-      if(this.usuario.cpf.length == 11) 
-        this.usuario.cpf = this.usuario.cpf + '-';      
-    }
+    this.usuario.cpf = this.usuario.cpf.replace(/\D/g, "");
+    this.usuario.cpf = this.usuario.cpf.replace(/(\d{3})(\d)/, "$1.$2");
+    this.usuario.cpf = this.usuario.cpf.replace(/(\d{3})(\d)/, "$1.$2");
+    this.usuario.cpf = this.usuario.cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
   }
 
   /**
    * Call authenticator.
    */
   public login(): void {
-    
+
     let cpfSemCaracteresEspeciais: string = this.usuario.cpf.split('.').join('').replace('-', '');
 
     if ((cpfSemCaracteresEspeciais !== '123' || this.usuario.senha !== '123')
